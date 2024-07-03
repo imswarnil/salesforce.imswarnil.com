@@ -1,0 +1,32 @@
+
+// Navbar styles
+.navbar {
+
+   img 
+   {
+    max-height: 100%;
+    height: auto;
+    width: 250px;
+   }
+  .navbar-item {
+    font-weight:inherit;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary;
+    }
+
+    &.is-active {
+      background-color: transparent;
+      color: $primary;
+      font-weight:500;
+    }
+  }
+
+  .navbar-burger {
+    &:hover {
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+}

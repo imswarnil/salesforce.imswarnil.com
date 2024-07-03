@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% if page.sidebar %}
+    {% if page.sidebar_left and page.sidebar_right %}
+        {% assign left_sidebar_width = 'is-2' %}
+        {% assign content_width = 'is-7' %}
+        {% assign right_sidebar_width = 'is-3' %}
+    {% elsif page.sidebar_left %}
+        {% assign left_sidebar_width = 'is-3' %}
+        {% assign content_width = 'is-9' %}
+    {% elsif page.sidebar_right %}
+        {% assign content_width = 'is-8' %}
+        {% assign right_sidebar_width = 'is-4' %}
+    {% else %}
+        {% assign content_width = 'is-12' %}
+    {% endif %}
+{% else %}
+    {% assign content_width = 'is-12' %}
+{% endif %}
+
+{% include site-header.html %}
+<main class="main section" id="swup-content">
+  <div class="container">
+    <div class="columns">
+
+      {% if page.sidebar and page.sidebar_left %}
+        <aside class="column {{ left_sidebar_width }}">
+          {% include sidebar/left-sidebar.html %}
+        </aside>
+      {% endif %}
+
+      <div class="column {{ content_width }}">
+        <article class="article content animated intensifies">
+          <h1 class="title animated intensifies">{{ page.title }}</h1>
+          {{ content }}
+        </article>
+      </div>
+
+      {% if page.sidebar and page.sidebar_right %}
+        <aside class="column {{ right_sidebar_width }}">
+          {% include sidebar/right-sidebar.html %}
+        </aside>
+      {% endif %}
+      
+    </div>
+  </div>
+</main>
+
+{% include site-footer.html %}

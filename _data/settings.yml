@@ -1,0 +1,94 @@
+# settings.yml
+
+
+# Basic Site Information
+site:
+  title: "Namaste Salesforce"
+  description: "An open-source e-learning platform to help people learn Salesforce."
+  url: "https://www.namastesalesforce.com"
+  language: "en"
+  timezone: "UTC"
+  keywords: "Salesforce, e-learning, open source, CRM, tutorials, courses"
+  created_date: "2024-07-03"
+
+# Author Information
+author:
+  name: "Namaste Salesforce Team"
+  email: "info@namastesalesforce.com"
+  bio: "We are a team dedicated to providing high-quality Salesforce tutorials and courses for everyone."
+  avatar: "/assets/images/author.png"
+  social:
+    twitter: "https://twitter.com/namastesalesforce"
+    linkedin: "https://www.linkedin.com/company/namastesalesforce"
+    github: "https://github.com/namastesalesforce"
+    facebook: "https://www.facebook.com/namastesalesforce"
+
+# SEO Settings
+seo:
+  title_separator: "-"
+  site_title: "Namaste Salesforce"
+  site_description: "An open-source e-learning platform to help people learn Salesforce."
+  site_keywords: "Salesforce, e-learning, open source, CRM, tutorials, courses"
+  google_analytics: "UA-XXXXXX-X"
+  bing_verification: "XXXXXXXXXXXXXXXX"
+  google_site_verification: "XXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Local Settings
+local:
+  default_locale: "en"
+  available_locales:
+    - "en"
+    - "es"
+    - "fr"
+    - "de"
+  date_format: "%B %d, %Y"
+  time_format: "%H:%M"
+
+# Website Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Courses"
+    url: "/courses"
+  - title: "Tutorials"
+    url: "/tutorials"
+  - title: "Blog"
+    url: "/blog"
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
+
+# Sitemap
+sitemap:
+  enable: true
+  url: "https://www.namastesalesforce.com/sitemap.xml"
+  changefreq: "weekly"
+  priority: "0.8"
+
+# Other Details
+social_sharing:
+  twitter: true
+  facebook: true
+  linkedin: true
+  pinterest: false
+
+adsense:
+  enable: true
+  client_id: "ca-pub-XXXXXXXXXXXXXXXX"
+
+comments:
+  enable: true
+  provider: "disqus"
+  disqus_shortname: "namastesalesforce"
+
+# Footer Information
+footer:
+  copyright: "© 2024 Namaste Salesforce. All rights reserved."
+  links:
+    - title: "Privacy Policy"
+      url: "/privacy-policy"
+    - title: "Terms of Service"
+      url: "/terms-of-service"
+    - title: "Sitemap"
+      url: "/sitemap.xml"
