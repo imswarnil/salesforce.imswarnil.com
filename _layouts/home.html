@@ -36,77 +36,7 @@
 <body>
   {% include site-header.html %}
   
-  <section class="section home-hero">
-    <div class="container">
-      <div class="columns is-vcentered is-variable is-8">
-        <div class="column is-6-tablet is-12-mobile">
-          <p class="home-hero-subtitle">Say Namaste to Salesforce</p>
-          <h1 class="home-hero-title">Start Learning <span class="has-text-primary">Salesforce</span> From Scratch</h1>
-          <a href="/courses" class="home-hero-button button is-outlined is-primary is-large">Browse Courses</a>
-        </div>
-        <div class="column is-6-tablet is-12-mobile">
-          <img src="/assets/learn-salesforce.png" alt="Learn Salesforce" class="home-hero-image">
-        </div>
-      </div>
-    </div>
-  </section>
-<style>
-    @import "bulma";
-
-.home-hero {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  
-  .home-hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #4a4a4a;
-    margin-bottom: 1rem;
-  }
-
-  .home-hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 1.5rem;
-    span {
-      color: var(--bulma-primary, #3273dc); /* Primary color from Bulma */
-    }
-  }
-
-  .home-hero-button {
-    border-color: var(--bulma-primary, #3273dc); /* Primary color from Bulma */
-    color: var(--bulma-primary, #3273dc); /* Primary color from Bulma */
-    &:hover {
-      background-color: var(--bulma-primary, #3273dc); /* Primary color from Bulma */
-      color: #fff;
-    }
-  }
-
-  .home-hero-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .columns {
-      flex-direction: column-reverse;
-      text-align: center;
-    }
-    .home-hero-title {
-      font-size: 2rem;
-    }
-    .home-hero-subtitle {
-      font-size: 1.2rem;
-    }
-    .home-hero-button {
-      margin-top: 1rem;
-    }
-  }
-}
-
-</style>  
+ 
 
   {% include home/hero.html %}
   {% include home/get-started.html %}
