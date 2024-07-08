@@ -7,8 +7,6 @@ description: "A demo of Markdown and HTML includes"
 permalink : /about
 ---
  <style>
-   
-    
     .hero .title, .hero .subtitle {
       color: white;
     }
@@ -73,8 +71,6 @@ permalink : /about
       }
     }
   </style>
-</head>
-<body>
   <!-- Hero Section -->
   <section class="hero is-small is-light is-bold">
     <div class="hero-body">
