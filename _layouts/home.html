@@ -35,15 +35,44 @@
 
 <body>
   {% include site-header.html %}
-  
- 
-
   {% include home/hero.html %}
+  
   {% include home/get-started.html %}
   {% include home/features.html %}
   {% include home/lessons.html %}
 
-
+  <div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block; height: 90px;"
+         data-ad-client="ca-pub-1291242080282540"
+         data-ad-slot="8939839370"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  
+  <style>
+    .ad-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+    }
+    .adsbygoogle {
+      width: 100%;
+      max-height: 90px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .adsbygoogle {
+        max-height: 60px;
+      }
+    }
+  </style>
+  
   
 <footer class="pt-6 pb-6">
   <div class="container">
