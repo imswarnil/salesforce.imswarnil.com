@@ -4,67 +4,42 @@ layout: default
 
 {% include site-header.html %}
 
-<div class="my-5">
+{% assign words = page.content | number_of_words %}
+{% assign minutes = words | divided_by:200 %}
+{% if minutes < 1 %}
+  {% assign minutes = 1 %}
+{% endif %}
+
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-12 ">
-        <!-- Video Embed with Aspect Ratio -->
-        <figure class="image is-2by1 slide-in-bck-center ">
-          <iframe class="has-ratio"
-                  width="640"
-                  height="360"
-                  src="https://www.youtube.com/embed/{{ page.video_id }}"
-                  allowfullscreen></iframe>
-        </figure>
-        <!-- Lesson Details Section -->
-        <div class="columns mt-5">
-          <div class="column is-8">
-            <div class="content">
-              <h2 class="title is-4">{{ page.title }}</h2>
-              <p class="mb-4"><i class="{{ page.icon }} mr-2"></i> Lesson {{ page.lesson_number }}</p>
-              <p>{{ content }}</p>
-            </div>
-          </div>
-
-          <!-- Course Content Menu -->
-          <div class="column box p-5 is-4">
-            <aside class="menu">
-              <p class="menu-label">Course Content</p>
-              <ul class="menu-list">
-                {% for post in site.posts %}
-                  {% assign active_class = "" %}
-                  {% if page.url == post.url %}
-                    {% assign active_class = "is-active" %}
-                  {% endif %}
-                  <li>
-                    <a href="{{ post.url }}" class="{{ active_class }}">
-                      {{ forloop.index }}. {{ post.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </aside>
-            <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-1291242080282540"
-            data-ad-slot="7663977887"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+      <div class="column is-8">
+        <!-- Post Thumbnail -->
+        {% if page.thumbnail %}
+          <figure class="image is-16by9 mb-5">
+            <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+          </figure>
+        {% endif %}
+        <!-- Post Content -->
+        <div class="content mt-5">
+          <h1 class="title is-2">{{ page.title }}</h1>
+          <p class="is-size-6 has-text-grey">
+            {{ page.date | date: "%B %d, %Y" }} | By {{ page.author }} | {{ minutes }} min read
+          </p>
+          <p>{{ page.description }}</p>
+          <div class="post-content mt-5">
+            {{ content }}
           </div>
         </div>
       </div>
-
+      <!-- Sidebar -->
       {% if page.aside == true %}
-        <aside class="column is-4">
-          {% include site-aside.html %}
-        </aside>
+      <div class="column">
+        {% include site-aside.html %}
+      </div>
       {% endif %}
-
     </div>
   </div>
-</div>
+</section>
 
 {% include site-footer.html %}

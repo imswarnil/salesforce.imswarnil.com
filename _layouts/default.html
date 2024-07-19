@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-
 <head>
   <!-- General meta -->
   <meta charset="utf-8">
@@ -32,6 +31,24 @@
   {% include site-before-start.html %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+{% if page.sidebar %}
+    {% if page.sidebar_left and page.sidebar_right %}
+        {% assign left_sidebar_width = 'is-2' %}
+        {% assign content_width = 'is-7' %}
+        {% assign right_sidebar_width = 'is-3' %}
+    {% elsif page.sidebar_left %}
+        {% assign left_sidebar_width = 'is-3' %}
+        {% assign content_width = 'is-9' %}
+    {% elsif page.sidebar_right %}
+        {% assign content_width = 'is-8' %}
+        {% assign right_sidebar_width = 'is-4' %}
+    {% else %}
+        {% assign content_width = 'is-12' %}
+    {% endif %}
+{% else %}
+    {% assign content_width = 'is-12' %}
+{% endif %}
+
 <body class="layout-{{ page.layout | default: 'default' }}{% if page.title %} {{ page.title | slugify }}{% endif %}">
   <div class="container">
     {{ content }}
